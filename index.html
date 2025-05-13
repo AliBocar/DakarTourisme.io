@@ -1,181 +1,59 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Tourisme à Dakar</title
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tourisme à Dakar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #c90b0b;
-    }
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Tourisme à Dakar</h1>
+      <p>
+        Découvrez les lieux touristiques, marchés locaux et attractions de Dakar
+      </p>
+    </header>
 
-    header {
-      background-color: #0bdf75;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
+    <section id="carte">
+      <h2>Carte des lieux à découvrir</h2>
+      <div id="map"></div>
+    </section>
 
-    nav {
-      background-color: #c4c110ea;
-      display: flex;
-      justify-content: center;
-    }
+    <section class="gallery">
+      <h2>Galerie des Lieux</h2>
+      <img img src="image/ile .jpg.png" />
+      <img
+        src="../image/renaissance.png"
+        alt="Monument de la Renaissance Africaine"
+      />
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/8/83/Mosquee_de_la_Divinite.jpg"
+        alt="Mosquée de la Divinité"
+      />
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/6/61/Sandaga_market_Dakar.jpg"
+        alt="Marché Sandaga"
+      />
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Parc_Hann_Dakar.jpg"
+        alt="Parc de Hann"
+      />
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/4/42/Place_du_Souvenir_Dakar.jpg"
+        alt="Place du Souvenir Africain"
+      />
+    </section>
 
-    nav a {
-      padding: 15px 20px;
-      display: block;
-      color: rgb(159, 240, 29);
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      background-color: #16a085;
-    }
-
-    section {
-      padding: 30px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    #map {
-      height: 500px;
-      margin-bottom: 20px;
-    }
-
-    .lieux {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-
-    .card {
-      background: rgb(84, 212, 10);
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      width: 280px;
-      overflow: hidden;
-    }
-
-    .card img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-    }
-
-    .card h3 {
-      margin: 10px;
-      font-size: 18px;
-      color: #2c3e50;
-    }
-
-    .card p {
-      margin: 10px;
-      font-size: 14px;
-      color: #555;
-    }
-
-    footer {
-      background-color: #2c3e50;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 40px;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>Tourisme à Dakar</h1>
-    <p>Explorez les trésors culturels et historiques de Dakar</p>
-  </header>
-
-  <nav>
-    <a href="#carte">Carte</a>
-    <a href="#lieux">Lieux</a>
-    <a href="#apropos">À propos</a>
-  </nav>
-
-  <section id="carte">
-    <h2>Carte des lieux à découvrir</h2>
-    <div id="map"></div>
-  </section>
-
-  <section id="lieux">
-    <h2>Lieux touristiques de Dakar</h2>
-    <div class="lieux">
-      <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Gor%C3%A9e_7.jpg" alt="Île de Gorée">
-        <h3>Île de Gorée</h3>
-        <p>Patrimoine mondial de l'UNESCO, symbole de mémoire et d'histoire.</p>
-      </div>
-      <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Monument_de_la_Renaissance_Africaine_-_2019.jpg" alt="Monument Renaissance">
-        <h3>Monument de la Renaissance Africaine</h3>
-        <p>Une statue imposante de 52m célébrant l’avenir du continent africain.</p>
-      </div>
-      <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Mosquee_de_la_Divinite.jpg" alt="Mosquée de la Divinité">
-        <h3>Mosquée de la Divinité</h3>
-        <p>Mosquée élégante surplombant la mer, connue pour son architecture unique.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="apropos">
-    <h2>À propos</h2>
-    <p>
-      Ce site a pour objectif de promouvoir le tourisme à Dakar, la capitale du Sénégal. Ville dynamique, culturelle, historique et chaleureuse, elle offre de nombreux lieux à visiter pour les amoureux de l’Afrique, de l’océan, de l’histoire et de l’hospitalité sénégalaise.
-    </p>
-  </section>
-
-  <footer>
-    &copy; 2025 Tourisme Dakar - Réalisé avec ❤️ ABD
-  </footer>
-
-  <!-- Leaflet JS -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script>
-    var map = L.map('map').setView([14.6928, -17.4467], 12);
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '© OpenStreetMap contributors'
-    }).addTo(map);
-
-    var lieux = [
-      {
-        nom: "Île de Gorée",
-        coord: [14.6674, -17.3983],
-        desc: "Patrimoine mondial de l'UNESCO, symbole de mémoire."
-      },
-      {
-        nom: "Monument de la Renaissance Africaine",
-        coord: [14.7190, -17.4843],
-        desc: "Statue monumentale de 52 mètres sur la colline des Mamelles."
-      },
-      {
-        nom: "Mosquée de la Divinité",
-        coord: [14.7175, -17.4796],
-        desc: "Mosquée majestueuse en bord de mer, proche des Almadies."
-      }
-    ];
-
-    lieux.forEach(function(lieu) {
-      L.marker(lieu.coord)
-        .addTo(map)
-        .bindPopup("<strong>" + lieu.nom + "</strong><br>" + lieu.desc);
-    });
-  </script>
-
-</body>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Include the JavaScript file -->
+    <script src="script.js"></script>
+  </body>
 </html>
